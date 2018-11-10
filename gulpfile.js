@@ -122,7 +122,7 @@ gulp.task("rollup:umd", function() {
           // The name to use for the module for UMD/IIFE bundles
           // (required for bundles with exports)
           // See https://github.com/rollup/rollup/wiki/JavaScript-API#modulename
-          moduleName: "angular-particle",
+          moduleName: "ng-particle",
 
           // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals
           globals: {
@@ -130,7 +130,7 @@ gulp.task("rollup:umd", function() {
           }
         })
       )
-      .pipe(rename("angular-particle.umd.js"))
+      .pipe(rename("ng-particle.umd.js"))
       .pipe(gulp.dest(distFolder))
   );
 });

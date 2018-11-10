@@ -1,9 +1,9 @@
 {
-  "name": "angular-particle",
+  "name": "ng-particle",
   "version": "1.0.5",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shamahn/angular-particle"
+    "url": "https://github.com/shamahn/ng-particle"
   },
   "author": {
     "name": "Luc Raymond",
@@ -21,13 +21,13 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shamahn/angular-particle/issues"
+    "url": "https://github.com/shamahn/ng-particle/issues"
   },
-  "module": "angular-particle.js",
-  "typings": "angular-particle.d.ts",
+  "module": "ng-particle.js",
+  "typings": "ng-particle.d.ts",
   "peerDependencies": {
-    "@angular/core": "^4.0.0",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "@angular/core": "^7.0.3",
+    "rxjs": "^6.3.3",
+    "zone.js": "^0.8.26"
   }
 }

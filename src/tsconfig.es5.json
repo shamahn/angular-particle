@@ -21,8 +21,8 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "angular-particle.js",
-    "flatModuleId": "angular-particle"
+    "flatModuleOutFile": "ng-particle.js",
+    "flatModuleId": "ng-particle"
   },
   "files": [
     "./index.ts"

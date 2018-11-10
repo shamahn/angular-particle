@@ -1,11 +1,11 @@
 {
-  "name": "angular-particle",
+  "name": "ng-particle",
   "version": "1.0.5",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
     "docs": "npm run docs:build",
-    "docs:build": "compodoc -p tsconfig.json -n angular-particle -d docs --hideGenerator",
+    "docs:build": "compodoc -p tsconfig.json -n ng-particle -d docs --hideGenerator",
     "docs:serve": "npm run docs:build -- -s",
     "docs:watch": "npm run docs:build -- -s -w",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shamahn/angular-particle"
+    "url": "https://github.com/shamahn/ng-particle"
   },
   "author": {
     "name": "Luc Raymond",
@@ -31,7 +31,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shamahn/angular-particle/issues"
+    "url": "https://github.com/shamahn/ng-particle/issues"
   },
   "devDependencies": {
     "@angular-devkit/schematics": "^7.0.5",
