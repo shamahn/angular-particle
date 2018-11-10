@@ -187,7 +187,7 @@ exports.getDefaultParams = function () {
     };
 };
 loadImg = (params, tmp) => {
-    var particles = this.params.particles;
+    var particles = params.particles;
     tmp.img_error = undefined;
     if (particles.shape.type === 'image' && particles.shape.image.src !== '') {
         if (tmp.img_type === 'svg') {
