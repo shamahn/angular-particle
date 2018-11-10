@@ -186,7 +186,7 @@ exports.getDefaultParams = function () {
         retina_detect: true
     };
 };
-function loadImg(params, tmp) {
+loadImg = (params, tmp) => {
     var particles = this.params.particles;
     tmp.img_error = undefined;
     if (particles.shape.type === 'image' && particles.shape.image.src !== '') {
