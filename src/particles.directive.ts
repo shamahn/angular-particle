@@ -1,21 +1,20 @@
-﻿import { Directive, ElementRef, AfterViewInit, HostListener, Input, OnDestroy } from "@angular/core";
+﻿import { Directive, ElementRef, AfterViewInit, HostListener, Input, OnDestroy } from '@angular/core';
 import { CanvasManager, ICanvasParams, IParams, ITmpParams, getDefaultParams, isInArray, deepExtend, loadImg } from './lib/index';
 
 @Directive({
-    selector: '[d-particles]'
+    selector: '[dParticles]'
 })
 export class ParticlesDirective implements AfterViewInit, OnDestroy  {
+    private _canvasParams: ICanvasParams;
+    private _params: IParams;
+    private _tmpParams: ITmpParams = {};
+    private _canvasManager: CanvasManager;
     @Input() set params(value: IParams) {
         let defaultParams: IParams = getDefaultParams();
         this._params = deepExtend(defaultParams, value);
     }
 
     constructor(private el: ElementRef) { }
-
-    private _canvasParams: ICanvasParams;
-    private _params: IParams;
-    private _tmpParams: ITmpParams = {};
-    private _canvasManager: CanvasManager;
 
     ngOnDestroy(): void {
         if (!this._canvasManager) {
@@ -44,7 +43,7 @@ export class ParticlesDirective implements AfterViewInit, OnDestroy  {
             mode_repulse_distance: this._params.interactivity.modes.repulse.distance
         };
 
-        this._params.interactivity.el = (this._params.interactivity.detect_on == 'window') ? window : this._canvasParams.el;
+        this._params.interactivity.el = (this._params.interactivity.detect_on === 'window') ? window : this._canvasParams.el;
 
         if (isInArray('image', this._params.particles.shape.type)) {
             this._tmpParams.img_type = this._params.particles.shape.image.src.substr(this._params.particles.shape.image.src.length - 3);
@@ -70,7 +69,7 @@ export class ParticlesDirective implements AfterViewInit, OnDestroy  {
                 y: number;
             };
 
-            if (interactivity.el == window) {
+            if (interactivity.el === window) {
                 pos = {
                     x: event.clientX,
                     y: event.clientY
@@ -125,7 +124,7 @@ export class ParticlesDirective implements AfterViewInit, OnDestroy  {
                     if (particles.move.enable) {
                         this._canvasManager.particlesManager.pushParticles(interactivity.modes.push.particles_nb, interactivity.mouse);
                     } else {
-                        if (interactivity.modes.push.particles_nb == 1) {
+                        if (interactivity.modes.push.particles_nb === 1) {
                             this._canvasManager.particlesManager.pushParticles(interactivity.modes.push.particles_nb, interactivity.mouse);
                         } else if (interactivity.modes.push.particles_nb > 1) {
                             this._canvasManager.particlesManager.pushParticles(interactivity.modes.push.particles_nb);
