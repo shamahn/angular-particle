@@ -1,9 +1,9 @@
 {
   "name": "angular-particle",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryuKKu-/angular-particle"
+    "url": "https://github.com/shamahn/angular-particle"
   },
   "author": {
     "name": "Luc Raymond",
@@ -21,7 +21,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ryuKKu-/angular-particle/issues"
+    "url": "https://github.com/shamahn/angular-particle/issues"
   },
   "module": "angular-particle.js",
   "typings": "angular-particle.d.ts",
