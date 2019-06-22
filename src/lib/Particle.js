@@ -123,8 +123,7 @@ var Particle = /** @class */ (function () {
         var shape_type = this._params.particles.shape.type;
         if (typeof shape_type === 'object') {
             if (shape_type instanceof Array) {
-                var shape_selected = shape_type[Math.floor(Math.random() * shape_type.length)];
-                this.shape = shape_selected;
+                this.shape = shape_type[Math.floor(Math.random() * shape_type.length)];
             }
         }
         else {
@@ -225,7 +224,6 @@ var Particle = /** @class */ (function () {
                 if (img_obj) {
                     draw(img_obj);
                 }
-                ;
                 break;
         }
         this._canvasParams.ctx.closePath();

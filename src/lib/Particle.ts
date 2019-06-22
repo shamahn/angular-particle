@@ -1,11 +1,4 @@
-﻿import {
-  IParams,
-  ICanvasParams,
-  ITmpParams,
-  hexToRgb,
-  getColor,
-  createSvgImg
-} from './index';
+﻿import {createSvgImg, getColor, ICanvasParams, IParams, ITmpParams} from './index';
 
 export class Particle {
   radius: number;
@@ -171,9 +164,7 @@ export class Particle {
 
     if (typeof shape_type === 'object') {
       if (shape_type instanceof Array) {
-        let shape_selected: string =
-          shape_type[Math.floor(Math.random() * shape_type.length)];
-        this.shape = shape_selected;
+        this.shape = shape_type[Math.floor(Math.random() * shape_type.length)];
       }
     } else {
       this.shape = shape_type;
@@ -336,7 +327,7 @@ export class Particle {
 
         if (img_obj) {
             draw(img_obj)
-        };
+        }
         break;
     }
 

@@ -50,11 +50,7 @@ export const deepExtend: (destination: any, source: any) => any = function(
   source
 ) {
   for (let property in source) {
-    if (
-      source[property] &&
-      source[property].constructor &&
-      source[property].constructor === Object
-    ) {
+    if (source.hasOwnProperty(property) && source[property].constructor && source[property].constructor === Object) {
       destination[property] = destination[property] || {};
       deepExtend(destination[property], source[property]);
     } else {

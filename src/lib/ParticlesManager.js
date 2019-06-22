@@ -89,21 +89,19 @@ var ParticlesManager = /** @class */ (function () {
                 particle.y = new_pos.y_bottom;
                 particle.x = Math.random() * _this._canvasParams.width;
             }
-            switch (_this._params.particles.move.out_mode) {
-                case 'bounce':
-                    if (particle.x + particle.radius > _this._canvasParams.width) {
-                        particle.vx = -particle.vx;
-                    }
-                    else if (particle.x - particle.radius < 0) {
-                        particle.vx = -particle.vx;
-                    }
-                    if (particle.y + particle.radius > _this._canvasParams.height) {
-                        particle.vy = -particle.vy;
-                    }
-                    else if (particle.y - particle.radius < 0) {
-                        particle.vy = -particle.vy;
-                    }
-                    break;
+            if (_this._params.particles.move.out_mode === 'bounce') {
+                if (particle.x + particle.radius > _this._canvasParams.width) {
+                    particle.vx = -particle.vx;
+                }
+                else if (particle.x - particle.radius < 0) {
+                    particle.vx = -particle.vx;
+                }
+                if (particle.y + particle.radius > _this._canvasParams.height) {
+                    particle.vy = -particle.vy;
+                }
+                else if (particle.y - particle.radius < 0) {
+                    particle.vy = -particle.vy;
+                }
             }
             if (index_1.isInArray('grab', _this._params.interactivity.events.onhover.mode)) {
                 _this._grabParticle(particle);
@@ -348,7 +346,7 @@ var ParticlesManager = /** @class */ (function () {
                 var dx_1 = this._params.interactivity.mouse.click_pos_x - particle.x;
                 var dy_1 = this._params.interactivity.mouse.click_pos_y - particle.y;
                 var d = dx_1 * dx_1 + dy_1 * dy_1;
-                var force_1 = (-repulseRadius / d) * 1;
+                var force_1 = (-repulseRadius / d);
                 var process = function () {
                     var f = Math.atan2(dy_1, dx_1);
                     particle.vx = force_1 * Math.cos(f);
