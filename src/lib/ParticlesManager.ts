@@ -120,19 +120,17 @@ export class ParticlesManager {
         particle.x = Math.random() * this._canvasParams.width;
       }
 
-      switch (this._params.particles.move.out_mode) {
-        case 'bounce':
-          if (particle.x + particle.radius > this._canvasParams.width) {
+      if (this._params.particles.move.out_mode === 'bounce') {
+        if (particle.x + particle.radius > this._canvasParams.width) {
+          particle.vx = -particle.vx;
+        } else if (particle.x - particle.radius < 0) {
             particle.vx = -particle.vx;
-          } else if (particle.x - particle.radius < 0) {
-              particle.vx = -particle.vx;
-          }
-          if (particle.y + particle.radius > this._canvasParams.height) {
+        }
+        if (particle.y + particle.radius > this._canvasParams.height) {
+          particle.vy = -particle.vy;
+        } else if (particle.y - particle.radius < 0) {
             particle.vy = -particle.vy;
-          } else if (particle.y - particle.radius < 0) {
-              particle.vy = -particle.vy;
-          }
-          break;
+        }
       }
 
       if (isInArray('grab', this._params.interactivity.events.onhover.mode)) {
@@ -495,7 +493,7 @@ export class ParticlesManager {
           this._params.interactivity.mouse.click_pos_y - particle.y;
         let d: number = dx * dx + dy * dy;
 
-        let force: number = (-repulseRadius / d) * 1;
+        let force: number = (-repulseRadius / d);
 
         let process: () => void = () => {
           let f: number = Math.atan2(dy, dx);

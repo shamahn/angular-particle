@@ -13,7 +13,6 @@ $ npm install ng-particle --save
 ## How to use
 
 ```typescript
-// Import ParticlesModule
 import { ParticlesModule } from 'ng-particle';
 
 @NgModule({
@@ -33,7 +32,7 @@ export class AppModule { }
 And just use the component in your HTML
 
 ```html
-<particles [style]="style" [width]="width" [height]="height" [params]="params"></particles>
+<ng-particles [style]="style" [width]="width" [height]="height" [params]="params"></ng-particles>
 ```
 
 Parameters configuration can be found [here](http://vincentgarreau.com/particles.js/). If you don't provide any parameters, default one are used.
@@ -59,8 +58,8 @@ Parameters configuration can be found [here](http://vincentgarreau.com/particles
     styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-    myStyle: object = {};
-	myParams: object = {};
+    myStyle: object;
+	myParams: object;
 	width: number = 100;
 	height: number = 100;
 
@@ -94,7 +93,7 @@ export class AppComponent implements OnInit {
 ```
 
 ```html
-<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+<ng-particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></ng-particles>
 ```
 
 
